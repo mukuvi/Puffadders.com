@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCalendar, FaUser, FaClock, FaArrowRight, FaSearch, FaTags } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import blogs from "./blogdata";
 
 const Blog = () => {
@@ -40,26 +41,27 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen px-6 py-20">
+    <div className="min-h-screen bg-[#0A1929] px-6 py-20">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-secondary-500/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 animate-fade-in-up">
-            Tech Insights & Stories
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+            Puffadders Insights
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Discover the latest trends, tutorials and insights from the world of technology, cybersecurity and software development.
+            Stories, guides and updates from Kenya's fastest-growing student innovation community. 
+            Discover how students are building solutions in Health, Agriculture, Education and Fintech.
           </p>
         </div>
 
         {/* Search and Filter */}
-        <div className="glass-effect rounded-2xl p-6 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 mb-12 border border-white/10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
@@ -69,7 +71,7 @@ const Blog = () => {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={handleSearch}
-                className="w-full pl-10 pr-4 py-3 bg-dark-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white"
+                className="w-full pl-10 pr-4 py-3 bg-[#0A1929] border border-white/20 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-500"
               />
             </div>
 
@@ -79,7 +81,7 @@ const Blog = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => handleCategoryChange(e.target.value)}
-                className="px-4 py-3 bg-dark-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white"
+                className="px-4 py-3 bg-[#0A1929] border border-white/20 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white"
               >
                 {categories.map(category => (
                   <option key={category} value={category}>
@@ -96,16 +98,26 @@ const Blog = () => {
           {currentBlogs.map((blog, index) => (
             <article
               key={index}
-              className="glass-effect rounded-2xl overflow-hidden card-hover animate-fade-in-up group"
+              className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 animate-fade-in-up group border border-white/10"
               style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
-              {/* Blog Image */}
-              <div className="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 relative overflow-hidden">
+              {/* Blog Image with gradient based on category */}
+              <div className="h-48 bg-gradient-to-br from-white/20 to-white/5 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20"></div>
                 <div className="absolute bottom-4 left-4">
-                  <span className="bg-primary-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                  <span className="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-medium border border-white/30">
                     {blog.category}
                   </span>
+                </div>
+                {/* Category icon overlay */}
+                <div className="absolute top-4 right-4 text-white/30 text-4xl">
+                  {blog.category === "health" && "🏥"}
+                  {blog.category === "agriculture" && "🌱"}
+                  {blog.category === "education" && "📚"}
+                  {blog.category === "fintech" && "💰"}
+                  {blog.category === "hackathon" && "💻"}
+                  {blog.category === "community" && "👥"}
+                  {blog.category === "startup" && "🚀"}
                 </div>
               </div>
 
@@ -128,7 +140,7 @@ const Blog = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors duration-300">
                   {blog.title}
                 </h3>
 
@@ -140,7 +152,7 @@ const Blog = () => {
                 {/* Expanded Content */}
                 {expandedBlogIndex === index && (
                   <div className="mb-4">
-                    <div className="h-px bg-gradient-to-r from-transparent via-primary-500 to-transparent mb-4"></div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent mb-4"></div>
                     <p className="text-gray-300 leading-relaxed whitespace-pre-line">
                       {blog.content}
                     </p>
@@ -150,7 +162,7 @@ const Blog = () => {
                 {/* Read More Button */}
                 <button
                   onClick={() => handleExpand(index)}
-                  className="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors duration-300 group/btn"
+                  className="inline-flex items-center text-white hover:text-gray-300 transition-colors duration-300 group/btn"
                 >
                   {expandedBlogIndex === index ? "Read Less" : "Read More"}
                   <FaArrowRight className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -162,8 +174,8 @@ const Blog = () => {
 
         {/* No Results */}
         {filteredBlogs.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-6xl text-gray-600 mb-4">📝</div>
+          <div className="text-center py-12 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+            <div className="text-6xl text-gray-600 mb-4">📄</div>
             <h3 className="text-2xl font-bold text-gray-400 mb-2">No articles found</h3>
             <p className="text-gray-500">Try adjusting your search terms or category filter.</p>
           </div>
@@ -178,8 +190,8 @@ const Blog = () => {
                 onClick={() => setCurrentPage(index + 1)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   currentPage === index + 1
-                    ? "bg-primary-500 text-white shadow-lg shadow-primary-500/25"
-                    : "bg-dark-700 text-gray-300 hover:bg-primary-500/20 hover:text-primary-400"
+                    ? "bg-white text-[#0A1929] shadow-lg"
+                    : "bg-white/5 text-gray-300 hover:bg-white/20 hover:text-white border border-white/10"
                 }`}
               >
                 {index + 1}
@@ -189,21 +201,29 @@ const Blog = () => {
         )}
 
         {/* Newsletter Signup */}
-        <div className="glass-effect rounded-2xl p-8 mt-16 text-center">
-          <h2 className="text-3xl font-bold gradient-text mb-4">Stay Updated</h2>
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mt-16 text-center border border-white/10">
+          <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter and never miss the latest tech insights, tutorials, and community updates.
+            Get the latest stories from student innovators, hackathon announcements, and opportunities delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-dark-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white"
+              className="flex-1 px-4 py-3 bg-[#0A1929] border border-white/20 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-500"
             />
-            <button className="btn-primary px-6 py-3 whitespace-nowrap">
+            <button className="bg-white text-[#0A1929] font-bold px-6 py-3 rounded-lg hover:bg-gray-200 transition-all duration-300">
               Subscribe
             </button>
           </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-12">
+          <Link to="/community" className="inline-flex items-center text-white hover:text-gray-300 transition-colors duration-300">
+            Join the Puffadders Community
+            <FaArrowRight className="ml-2" />
+          </Link>
         </div>
       </div>
     </div>
