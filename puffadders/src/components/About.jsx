@@ -10,14 +10,7 @@ const socialLinks = [
     color: "hover:text-gray-400",
     bgColor: "hover:bg-gray-500/20",
   },
-  {
-    icon: <FaTelegram className="text-6xl" />,
-    name: "Telegram",
-    description: "Join our chat",
-    url: "https://t.me/puffadders",
-    color: "hover:text-blue-400",
-    bgColor: "hover:bg-blue-500/20",
-  },
+
   {
     icon: <FaDiscord className="text-6xl" />,
     name: "Discord",

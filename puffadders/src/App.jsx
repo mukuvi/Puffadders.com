@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Donate from "./components/Donate";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
-import Community from "./components/Community";
+import About from "./components/About";
 import Blog from "./components/Blog";
 import Store from "./components/Store";
 import JoinUs from "./components/JoinUs";
@@ -24,7 +24,7 @@ const App = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/community" element={<Community />} />
+          <Route path="/About" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/joinus" element={<JoinUs />} />
           <Route path="/store" element={<Store />} />
