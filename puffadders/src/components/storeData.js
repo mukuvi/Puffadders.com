@@ -15,7 +15,7 @@ const storeData = [
     id: 2,
     name: "Build Solve Impact Hoodie",
     price: 49.99,
-    image: "hoodie.jpeg",
+    image: "/hoodie.jpeg", // Changed from "hoodie.jpeg" to "/hoodie.jpeg"
     category: "apparel",
     description: "Cozy hoodie featuring our motto 'Build. Solve. Impact.' Perfect for late-night coding sessions.",
     rating: 4.9,
@@ -26,7 +26,7 @@ const storeData = [
     id: 3,
     name: "Innovation Cap",
     price: 19.99,
-    image: "public/cap.jpeg",
+    image: "/cap.jpeg", // Changed from "public/cap.jpeg" to "/cap.jpeg"
     category: "accessories",
     description: "Adjustable cap with embroidered Puffadders logo. Ideal for campus events and tech conferences.",
     rating: 4.6,
@@ -37,7 +37,7 @@ const storeData = [
     id: 4,
     name: "Hackathon Notebook",
     price: 14.99,
-    image: "public/book.jpeg",
+    image: "/book.jpeg", // Changed from "public/book.jpeg" to "/book.jpeg"
     category: "stationery",
     description: "Grid notebook for sketching ideas, writing code, and planning your next big innovation.",
     rating: 4.7,
@@ -60,7 +60,7 @@ const storeData = [
     id: 6,
     name: "Student Innovator Mug",
     price: 16.99,
-    image: "public/cup.jpeg",
+    image: "/cup.jpeg", // Changed from "public/cup.jpeg" to "/cup.jpeg"
     category: "accessories",
     description: "Ceramic mug with heat-activated design. Reveals 'Build. Solve. Impact.' when filled with hot coffee.",
     rating: 4.8,
