@@ -9,6 +9,8 @@ const blogs = [
     date: "Mar 15, 2026",
     readTime: "6 min read",
     category: "health",
+    image: "/blog/health-tech.jpg",
+    imageAlt: "Students working on health technology project"
   },
   {
     title: "From Campus to Market: Student AgriTech Startups Taking Root",
@@ -20,6 +22,8 @@ const blogs = [
     date: "Feb 18, 2026",
     readTime: "7 min read",
     category: "agriculture",
+    image: "/blog/agritech.jpg",
+    imageAlt: "Students with agricultural technology project"
   },
   {
     title: "Bridging the Digital Divide: Student-Led EdTech Innovations",
@@ -31,6 +35,8 @@ const blogs = [
     date: "Jan 22, 2026",
     readTime: "5 min read",
     category: "education",
+    image: "/blog/edtech.jpg",
+    imageAlt: "Students using educational technology"
   },
   {
     title: "Fintech Disruptors: How University Students Are Reshaping Financial Services",
@@ -42,6 +48,8 @@ const blogs = [
     date: "Dec 12, 2025",
     readTime: "6 min read",
     category: "fintech",
+    image: "/blog/fintech.jpg",
+    imageAlt: "Students working on financial technology"
   },
   {
     title: "Inside Puffadders: Building Kenya's Premier Student Innovation Community",
@@ -53,6 +61,8 @@ const blogs = [
     date: "Nov 5, 2025",
     readTime: "8 min read",
     category: "community",
+    image: "/blog/community.jpg",
+    imageAlt: "Puffadders community event"
   },
   {
     title: "From Hackathon Project to Startup: A Student Founder's Journey",
@@ -64,6 +74,8 @@ const blogs = [
     date: "Oct 18, 2025",
     readTime: "7 min read",
     category: "startup",
+    image: "/blog/startup.jpg",
+    imageAlt: "Student founder with startup team"
   },
   {
     title: "5 Tips for Winning Your First Hackathon",
@@ -75,6 +87,8 @@ const blogs = [
     date: "Sep 9, 2025",
     readTime: "4 min read",
     category: "hackathon",
+    image: "/blog/hackathon.jpg",
+    imageAlt: "Students participating in hackathon"
   },
   {
     title: "Women in Tech: Empowering Female Innovators at Puffadders",
@@ -86,6 +100,8 @@ const blogs = [
     date: "Aug 22, 2024",
     readTime: "5 min read",
     category: "community",
+    image: "/blog/women-in-tech.jpg",
+    imageAlt: "Women in technology at Puffadders event"
   },
   {
     title: "The Role of Mentorship in Student Innovation",
@@ -97,6 +113,8 @@ const blogs = [
     date: "Jul 14, 2024",
     readTime: "6 min read",
     category: "community",
+    image: "/blog/mentorship.jpg",
+    imageAlt: "Mentor working with students"
   },
   {
     title: "The First Puffadders Hackathon: A Look Back",
@@ -108,6 +126,8 @@ const blogs = [
     date: "Jun 5, 2023",
     readTime: "5 min read",
     category: "community",
+    image: "/blog/first-hackathon.jpg",
+    imageAlt: "First Puffadders hackathon event"
   },
   {
     title: "Why Student Innovation Matters for Kenya's Future",
@@ -119,6 +139,8 @@ const blogs = [
     date: "May 20, 2023",
     readTime: "6 min read",
     category: "community",
+    image: "/blog/student-innovation.jpg",
+    imageAlt: "Kenyan students innovating together"
   },
 ];
 

@@ -98,8 +98,23 @@ const Blog = () => {
               className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 animate-fade-in-up group border border-white/10"
               style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
-              {/* Blog Image with gradient based on category */}
-              <div className="h-48 bg-gradient-to-br from-white/20 to-white/5 relative overflow-hidden">
+              {/* Blog Image */}
+              <div className="h-48 relative overflow-hidden">
+                {blog.image ? (
+                  <img 
+                    src={blog.image}
+                    alt={blog.imageAlt || blog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      // Fallback if image fails to load
+                      e.target.onerror = null;
+                      e.target.style.display = 'none';
+                      e.target.parentNode.classList.add('bg-gradient-to-br', 'from-white/20', 'to-white/5');
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-white/20 to-white/5"></div>
+                )}
                 <div className="absolute inset-0 bg-black/20"></div>
                 <div className="absolute bottom-4 left-4">
                   <span className="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-medium border border-white/30">
