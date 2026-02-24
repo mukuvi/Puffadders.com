@@ -1,205 +1,158 @@
 import React from "react";
-import { FaGithub, FaDiscord, FaLinkedin, FaRocket, FaUsers, FaTrophy, FaLightbulb } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const socialLinks = [
+const timelineEvents = [
   {
-    icon: <FaGithub className="text-6xl" />,
-    name: "GitHub",
-    description: "Explore our projects and repositories",
-    url: "https://github.com/puffadders",
-    color: "hover:text-white",
-    bgColor: "hover:bg-white/20",
+    year: "2023",
+    title: "The Beginning",
+    description: "Puffadders was founded with a simple idea: create a space where university students could come together to build real solutions."
   },
   {
-    icon: <FaDiscord className="text-6xl" />,
-    name: "Discord",
-    description: "Connect with the student community",
-    url: "https://discord.gg/SdnKjuN2Ny",
-    color: "hover:text-white",
-    bgColor: "hover:bg-white/20",
+    year: "2024",
+    title: "First Hackathon",
+    description: "Our inaugural hackathon brought together 100+ students from 5 universities, resulting in 20+ prototypes addressing local challenges."
   },
   {
-    icon: <FaLinkedin className="text-6xl" />,
-    name: "LinkedIn",
-    description: "Professional network and updates",
-    url: "https://www.linkedin.com/company/puffadders",
-    color: "hover:text-white",
-    bgColor: "hover:bg-white/20",
-  },
-];
-
-const teamValues = [
-  {
-    icon: <FaRocket className="text-4xl" />,
-    title: "Innovation First",
-    description: "We empower students to build real-world solutions that make a difference."
-  },
-  {
-    icon: <FaUsers className="text-4xl" />,
-    title: "Community Driven",
-    description: "A collaborative space where developers, designers and innovators come together."
-  },
-  {
-    icon: <FaLightbulb className="text-4xl" />,
-    title: "Talent Discovery",
-    description: "Identifying and nurturing the next generation of problem-solvers."
-  },
-  {
-    icon: <FaTrophy className="text-4xl" />,
-    title: "Excellence",
-    description: "Pushing boundaries through hackathons and innovative projects."
+    year: "2025",
+    title: "Expanding Impact",
+    description: "Now active in 10+ universities with 500+ community members, 50+ solutions built, and 20+ startups launched."
   }
 ];
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-[#0A1929] flex items-center justify-center px-6 py-20">
-      {/* Background Effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto text-center">
-        {/* Header */}
-        <div className="mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
+    <div className="min-h-screen bg-[#0A1929]">
+      {/* Hero Section - Minimal */}
+      <section className="relative pt-32 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
             About Puffadders
           </h1>
-          <h2 className="text-2xl md:text-3xl text-gray-300 font-medium mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Build. Solve. Impact.
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            Puffadders is a university-focused innovation community dedicated to empowering 
-            students to build real-world solutions through hackathons, technology and collaboration.
+          <div className="w-24 h-1 bg-white/20 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-300 leading-relaxed">
+            We believe that the brightest ideas come from students who are given 
+            the right environment, mentorship, and support to bring them to life.
           </p>
         </div>
+      </section>
 
-        {/* Mission Statement */}
-        <div className="mb-16 bg-white/5 backdrop-blur-sm rounded-3xl p-10 border border-white/10 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            To discover talent, support innovation and build the next generation of problem-solvers 
-            in Health, Agriculture, Education and Fintech sectors.
-          </p>
-        </div>
-
-        {/* Team Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {teamValues.map((value, index) => (
-            <div
-              key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300 animate-fade-in-up border border-white/10"
-              style={{ animationDelay: `${0.6 + index * 0.1}s` }}
-            >
-              <div className="text-white mb-4 flex justify-center">
-                {value.icon}
+      {/* Our Story - Narrative Section */}
+      <section className="py-20 px-6 bg-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
+              <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+                <p>
+                  Puffadders started in a small classroom with a handful of students 
+                  who shared one thing in common: a desire to build things that matter.
+                </p>
+                <p>
+                  What began as informal meetups evolved into something bigger. We 
+                  realized that across Kenyan universities, there were countless students 
+                  with brilliant ideas but no platform to develop them.
+                </p>
+                <p>
+                  Today, we've grown into a community that spans multiple campuses, 
+                  connecting developers, designers, and innovators who are passionate 
+                  about solving real problems in health, agriculture, education, and fintech.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
-              <p className="text-gray-400 text-sm">{value.description}</p>
             </div>
-          ))}
-        </div>
-
-        {/* What We Offer */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            Through Our Programs
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6 text-left animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-3">For Students</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Build real solutions through hands-on hackathons</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Work with industry mentors and experts</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Access career opportunities with leading companies</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Launch startups from hackathon projects</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-3">For Partners</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Connect with top student talent across Kenya</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Support innovation in key sectors</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Sponsor hackathons and events</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-3">•</span>
-                  <span>Mentor the next generation of innovators</span>
-                </li>
-              </ul>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent rounded-3xl"></div>
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                <blockquote className="text-xl text-gray-300 italic">
+                  "The energy and creativity we see from students never ceases to amaze us. 
+                  Every hackathon brings new ideas that have the potential to transform communities."
+                </blockquote>
+                <div className="mt-6 text-white font-medium">
+                  — The Puffadders Team
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Connect With Us */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-            Connect With Us
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 border border-white/10 group animate-fade-in-up`}
-                style={{ animationDelay: `${1.1 + index * 0.1}s` }}
-              >
-                <div className={`text-gray-400 transition-colors duration-300 group-hover:text-white mb-4 flex justify-center`}>
-                  {social.icon}
+      {/* Timeline - Journey Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-white text-center mb-16">Our Journey</h2>
+          <div className="space-y-12">
+            {timelineEvents.map((event, index) => (
+              <div key={index} className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="md:w-32 flex-shrink-0">
+                  <span className="text-3xl font-bold text-white/30">{event.year}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-white transition-colors duration-300">
-                  {social.name}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {social.description}
-                </p>
-              </a>
+                <div className="flex-grow border-l-2 border-white/10 pl-8 pb-8 relative">
+                  <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-white/20 border-2 border-white"></div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{event.title}</h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">{event.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Call to Action */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-10 border border-white/10 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Ready to Make an Impact?
-          </h3>
-          <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
-            Join Kenya's fastest-growing student innovation community today.
+      {/* Values - Text Only */}
+      <section className="py-20 px-6 bg-white/5">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-white text-center mb-16">What Drives Us</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Innovation First</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                We empower students to build real-world solutions that make a difference, 
+                not just for grades, but for communities.
+              </p>
+            </div>
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Community Driven</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                A collaborative space where developers, designers, and innovators come 
+                together to learn from each other.
+              </p>
+            </div>
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Talent Discovery</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Identifying and nurturing the next generation of problem-solvers who will 
+                shape Kenya's future.
+              </p>
+            </div>
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Excellence</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Pushing boundaries through hackathons and innovative projects that set 
+                new standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action - Minimal */}
+      <section className="py-20 px-6 bg-white/5">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Be Part of the Story
+          </h2>
+          <p className="text-xl text-gray-300 mb-10">
+            Whether you're a student with an idea, a mentor with experience, or a partner 
+            looking to support innovation, there's a place for you at Puffadders.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/joinus" className="bg-white text-[#0A1929] font-bold text-lg px-8 py-3 rounded-lg hover:bg-gray-200 transition-all duration-300 inline-flex items-center justify-center">
-              Join Puffadders
+            <Link to="/joinus" className="bg-white text-[#0A1929] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300">
+              Join the Community
             </Link>
-            <Link to="/contact" className="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 hover:bg-white hover:text-[#0A1929]">
+            <Link to="/partner" className="border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300">
               Partner With Us
             </Link>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
