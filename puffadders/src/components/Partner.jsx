@@ -268,14 +268,14 @@ const PartnerWithUs = () => {
             <FaEnvelope className="text-white mr-3 text-xl" />
             <div>
               <div className="text-xs text-gray-400">Email</div>
-              <div className="text-sm text-white">partners@puffadders.org</div>
+              <div className="text-sm text-white">thepuffadders@gmail.com </div>
             </div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 flex items-center">
             <FaPhone className="text-white mr-3 text-xl" />
             <div>
               <div className="text-xs text-gray-400">Phone</div>
-              <div className="text-sm text-white">+254 700 000 000</div>
+              <div className="text-sm text-white">+254 746 230 648</div>
             </div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 flex items-center">
