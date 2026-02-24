@@ -10,7 +10,7 @@ To discover talent, support innovation, and build the next generation of problem
 
 | Sector | Focus Areas |
 |--------|-------------|
-| 🏥**Health** | Telemedicine, health informatics, patient data, mobile health |
+| **Health** | Telemedicine, health informatics, patient data, mobile health |
 |  **Agriculture** | Smart farming, crop management, supply chain, weather tech |
 |  **Education** | E-learning, digital classrooms, STEM education, accessibility |
 | **Fintech** | Mobile payments, digital banking, financial inclusion, blockchain |
