@@ -20,6 +20,7 @@ import {
   FaChevronUp
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTheme } from "../ThemeContext";
 
 const supportWays = [
   {
@@ -83,6 +84,7 @@ const PartnerWithUs = () => {
     message: ""
   });
   const [openDropdown, setOpenDropdown] = useState(null);
+  const { darkMode } = useTheme();
 
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
