@@ -66,39 +66,6 @@ const storeData = [
     rating: 4.8,
     reviews: 234,
     onSale: false
-  },
-  {
-    id: 7,
-    name: "Hackathon T-Shirt (Limited)",
-    price: 17.99,
-    image: "https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg?auto=compress&cs=tinysrgb&w=500",
-    category: "apparel",
-    description: "Limited edition hackathon participant t-shirt. Features the Puffadders community design.",
-    rating: 4.9,
-    reviews: 67,
-    onSale: false
-  },
-  {
-    id: 8,
-    name: "Laptop Sleeve",
-    price: 19.99,
-    image: "/store/LaptopSleeve.jpeg",
-    category: "accessories",
-    description: "Padded laptop sleeve with Puffadders branding. Protects your device in style.",
-    rating: 4.7,
-    reviews: 112,
-    onSale: false
-  },
-  {
-    id: 9,
-    name: "Sticker Pack",
-    price: 4.99,
-    image: "/store/Stickerpack.jpeg",
-    category: "accessories",
-    description: "Set of 10 vinyl stickers featuring Puffadders logos and tech-themed designs.",
-    rating: 4.8,
-    reviews: 345,
-    onSale: false
   }
 ];
 
