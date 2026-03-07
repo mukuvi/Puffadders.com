@@ -15,7 +15,9 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaCode,
-  FaLightbulb
+  FaLightbulb,
+  FaChevronDown,
+  FaChevronUp
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -42,6 +44,35 @@ const supportWays = [
   }
 ];
 
+const partnerDropdowns = [
+  {
+    title: "General Partnership",
+    content: "Puffadders partners with organizations, companies, and individuals who share our vision of empowering student innovation in Kenya. As a general partner, you gain access to our network of 500+ student innovators from 10+ universities. Partners receive brand visibility at our events, access to talent pipelines, and the opportunity to shape the next generation of tech leaders. We tailor partnerships to align with your goals — whether it's CSR, recruitment, brand awareness, or innovation scouting."
+  },
+  {
+    title: "Event Sponsorship",
+    content: "Sponsor our flagship hackathons, workshops, and innovation bootcamps. Event sponsors receive prominent branding, speaking slots, mentorship opportunities, and direct access to participating students. Our events attract hundreds of skilled developers, designers, and innovators ready to build solutions across health, agriculture, education, and fintech."
+  },
+  {
+    title: "University Chapters",
+    content: "Partner with us to establish or support Puffadders chapters at universities across Kenya. University chapter partners help fund local events, provide mentorship, and create direct pipelines between their organizations and campus talent. Current chapters operate in Nairobi, Eldoret, Kisumu, and Mombasa with plans to expand to all major university towns."
+  },
+  {
+    title: "Corporate Innovation Programs",
+    content: "Engage Puffadders student teams to solve real challenges within your organization through structured innovation programs. We match your problem statements with our most talented student teams who prototype, test, and present solutions. This gives you access to fresh perspectives while providing students with real-world experience."
+  },
+  {
+    title: "Our Team",
+    content: "team"
+  }
+];
+
+const teamMembers = [
+  { name: "James Ngandu", role: "Chief Executive Officer", image: "/team/james ngandu.jpeg" },
+  { name: "Fidel Kivumbi", role: "Chief Strategy Officer", image: "/team/fidel kivumbi.jpeg" },
+  { name: "Enoch Juma", role: "Chief Technology Officer", image: "/team/enoch juma.jpeg" },
+];
+
 const PartnerWithUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -51,6 +82,11 @@ const PartnerWithUs = () => {
     interest: "",
     message: ""
   });
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
 
   const handleInputChange = (e) => {
     setFormData({
@@ -154,6 +190,61 @@ const PartnerWithUs = () => {
                 <div className="text-white mb-3 flex justify-center">{way.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-2 text-center">{way.title}</h3>
                 <p className="text-sm text-gray-300 leading-relaxed text-center">{way.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Partnership Info Dropdowns */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center animate-fade-in-up" style={{ animationDelay: "0.85s" }}>
+            Learn More About Partnerships
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-3">
+            {partnerDropdowns.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden animate-fade-in-up"
+                style={{ animationDelay: `${0.9 + index * 0.1}s` }}
+              >
+                <button
+                  onClick={() => toggleDropdown(index)}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-all duration-300"
+                >
+                  <span className="text-lg font-bold text-white">{item.title}</span>
+                  {openDropdown === index ? (
+                    <FaChevronUp className="text-white text-sm flex-shrink-0" />
+                  ) : (
+                    <FaChevronDown className="text-white text-sm flex-shrink-0" />
+                  )}
+                </button>
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${
+                    openDropdown === index ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-5 pb-5">
+                    {item.content === "team" ? (
+                      <div className="grid md:grid-cols-3 gap-6 pt-2">
+                        {teamMembers.map((member, i) => (
+                          <div key={i} className="text-center group">
+                            <div className="w-32 h-32 mx-auto mb-3 rounded-full overflow-hidden border-3 border-white/10 group-hover:border-white/30 transition-all duration-300">
+                              <img
+                                src={member.image}
+                                alt={member.name}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                            </div>
+                            <h4 className="text-lg font-bold text-white">{member.name}</h4>
+                            <p className="text-sm text-gray-400">{member.role}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-300 leading-relaxed">{item.content}</p>
+                    )}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

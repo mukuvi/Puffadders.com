@@ -69,7 +69,7 @@ const JoinUs = () => {
       <section className="relative py-24 px-6 border-b border-white/10">
         <div className="absolute inset-0 overflow-hidden">
           <img 
-            src="/puffadders banner.jpeg" 
+            src="/logo/puffadders banner.jpeg" 
             alt="" 
             className="w-full h-full object-cover opacity-10"
           />

@@ -133,6 +133,32 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our Team */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-white text-center mb-16">Our Team</h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              { name: "James Ngandu", role: "Chief Executive Officer", image: "/team/james ngandu.jpeg" },
+              { name: "Fidel Kivumbi", role: "Chief Strategy Officer", image: "/team/fidel kivumbi.jpeg" },
+              { name: "Enoch Juma", role: "Chief Technology Officer", image: "/team/enoch juma.jpeg" },
+            ].map((member, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-white/30 transition-all duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
+                <p className="text-gray-400 text-lg">{member.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action - Minimal */}
       <section className="py-20 px-6 bg-white/5">
         <div className="max-w-3xl mx-auto text-center">

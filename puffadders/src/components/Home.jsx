@@ -40,7 +40,7 @@ const Home = () => {
       title: "Hackathons",
       description:
         "Our flagship 48-hour events where students form teams to build real solutions for challenges in health, agriculture, education, and finance.",
-      image: "/puffadders banner.jpeg",
+      image: "/logo/puffadders banner.jpeg",
       linkText: "Explore Hackathons",
       linkTo: "/hackathons",
     },
@@ -48,7 +48,7 @@ const Home = () => {
       title: "Mentorship",
       description:
         "Connect with experienced professionals from leading tech companies who guide students through product development and career growth.",
-      image: "/puffadders banner.jpeg",
+      image: "/logo/puffadders banner.jpeg",
       linkText: "Become a Mentor",
       linkTo: "/joinus",
     },
@@ -56,7 +56,7 @@ const Home = () => {
       title: "Startup Launchpad",
       description:
         "From prototype to company. We provide resources, connections, and support for student teams ready to launch their ventures.",
-      image: "/puffadders banner.jpeg",
+      image: "/logo/puffadders banner.jpeg",
       linkText: "Launch Your Idea",
       linkTo: "/joinus",
     },
@@ -64,7 +64,7 @@ const Home = () => {
       title: "Career Access",
       description:
         "Connect with top employers through our network. Students gain internships, job opportunities, and a head start on their careers.",
-      image: "/puffadders banner.jpeg",
+      image: "/logo/puffadders banner.jpeg",
       linkText: "Find Opportunities",
       linkTo: "/blog",
     },
@@ -76,7 +76,7 @@ const Home = () => {
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 py-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/puffadders banner.jpeg"
+            src="/logo/puffadders banner.jpeg"
             alt=""
             className="w-full h-full object-cover opacity-20"
           />

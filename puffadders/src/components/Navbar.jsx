@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { useTheme } from "../ThemeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { darkMode, toggleTheme } = useTheme();
 
   const navItems = [
     { path: "/", label: "Home" },
@@ -24,7 +26,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center space-x-3 group">
           <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-white/30 shadow-lg">
             <img
-              src="/puffadders logo.png"
+              src="/logo/puffadders logo.png"
               alt="Puffadders"
               className="w-full h-full object-cover"
               onError={(e) => {
