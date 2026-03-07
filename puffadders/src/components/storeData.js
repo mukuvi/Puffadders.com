@@ -93,7 +93,7 @@ const storeData = [
     id: 9,
     name: "Sticker Pack",
     price: 4.99,
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=500",
+    image: "/store/Stickerpack.jpeg",
     category: "accessories",
     description: "Set of 10 vinyl stickers featuring Puffadders logos and tech-themed designs.",
     rating: 4.8,
