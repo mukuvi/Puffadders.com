@@ -11,6 +11,7 @@ import JoinUs from "./components/JoinUs";
 import "./styles.css";
 import NotFound from "./components/NotFound";
 import PartnerWithUs from "./components/Partner";
+import { ThemeProvider } from "./ThemeContext";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -18,23 +19,25 @@ const App = () => {
   setTimeout(() => setLoading(false), 2000);
 
   return (
-    <Router>
-      {loading && <Loader />}
-      <Navbar />
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/joinus" element={<JoinUs />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/partner" element={<PartnerWithUs />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-      <Footer />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        {loading && <Loader />}
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/joinus" element={<JoinUs />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/partner" element={<PartnerWithUs />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 };
 
